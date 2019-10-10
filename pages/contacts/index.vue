@@ -29,6 +29,42 @@
                 </li>-->
               </ul>
             </div>
+            <div class="requisites">
+              <ul class="requisites-left">
+                <li class="item">
+                  <h3 class="title">ООО Флай Авто</h3>
+                </li>
+                <li class="item">
+                  <p>Юридический адрес: 109316, г. Москва, проспект Волгоградский, д. 32к. 8</p>
+                </li>
+                <li class="item">
+                  <p>Почтовый адрес: 109316, г. Москва, проспект Волгоградский, д. 32к. 8</p>
+                </li>
+                <li class="item">
+                  <p>ИНН/КПП: 7723788393/772301001</p>
+                </li>
+                <li class="item">
+                  <p>ОГРН: 1117746112318</p>
+                </li>
+              </ul>
+              <ul class="requisites-right">
+                <li class="item">
+                  <h3 class="title">ООО ЕВРОАВТО РУС</h3>
+                </li>
+                <li class="item">
+                  <p>Юридический адрес: 109316, г. Москва, проспект Волгоградский, д. 32к. 8</p>
+                </li>
+                <li class="item">
+                  <p>Почтовый адрес: 109316, г. Москва, проспект Волгоградский, д. 32к. 8</p>
+                </li>
+                <li class="item">
+                  <p>ИНН/КПП: 7723788393/772301001</p>
+                </li>
+                <li class="item">
+                  <p>ОГРН: 1117746112318</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -123,6 +159,33 @@ $black: #333;
         }
       }
     }
+    .requisites {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 45px;
+      h3.title {
+        font-size: 24px;
+        font-weight: 900;
+        color: #002b5a;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #002b5a;
+      }
+      li.item {
+        margin-bottom: 8px;
+      }
+      &-left {
+        width: 40%;
+      }
+      &-right {
+        width: 40%;
+      }
+    }
   }
 }
 
@@ -179,11 +242,52 @@ $black: #333;
           }
         }
       }
+      .requisites {
+        margin-top: 15px;
+        h3.title {
+          font-size: 22px;
+        }
+        p {
+          font-size: 15px;
+        }
+        li.item {
+          margin-bottom: 6px;
+        }
+        &-left {
+          width: 44%;
+        }
+        &-right {
+          width: 44%;
+        }
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
+  .contacts {
+    .contacts-wrapper {
+      .requisites {
+        margin-top: 10px;
+        h3.title {
+          font-size: 22px;
+        }
+        p {
+          font-size: 15px;
+        }
+        li.item {
+          margin-bottom: 6px;
+        }
+        &-left {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        &-right {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {

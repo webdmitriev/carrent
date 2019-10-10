@@ -3,9 +3,9 @@
     <Header />
 
     <div class="carpark preveiwCar">
-      <div class="container">
-        <post :post="post" :postId="postId" />
-      </div>
+      <!-- <div class="container"> -->
+      <post :post="post" :postId="postId" />
+      <!-- </div> -->
 
       <div class="container">
         <busketPost :post="post" :postId="postId" @submit="onSubmitted" />
@@ -81,16 +81,39 @@ export default {
 
 <style lang="scss">
 .preveiwCar {
-  padding-top: 60px;
+  padding-top: 0px;
   background: url("../../../assets/img/main-bg.jpg") center no-repeat;
   background-size: cover;
   .preveiwCar-wrapper {
     margin-bottom: 45px;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     background-color: #fff;
     box-sizing: border-box;
+    .preveiwCar-slider {
+      position: relative;
+      .swiper-slide {
+        .images-slider {
+          img {
+            width: 100%;
+            height: 640px;
+            object-fit: cover;
+          }
+        }
+      }
+      h1.title {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        font-size: 54px;
+        font-weight: 900;
+        color: #fff;
+        transform: translateX(-50%);
+        z-index: 12;
+      }
+    }
     .breadcrumbs {
-      margin-bottom: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
       a {
         font-size: 17px;
         color: #a3a3a3;
@@ -106,35 +129,16 @@ export default {
       align-items: flex-start;
       width: 100%;
       .preveiwCar-left {
-        width: 44%;
-        .images {
-          width: 100%;
-          img {
+        width: 40%;
+        .preveiwCar-video {
+          iframe {
             width: 100%;
-          }
-        }
-        .images-preveiw {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: flex-start;
-          width: 100%;
-          margin-top: 25px;
-          .preveiw-img {
-            width: 22%;
-            p {
-              // height: 100px;
-            }
-            img {
-              width: 100%;
-              height: 80px;
-              object-fit: cover;
-            }
+            height: 342px;
           }
         }
       }
       .preveiwCar-right {
-        width: 50%;
+        width: 55%;
         h1.title {
           display: flex;
           flex-wrap: wrap;
@@ -287,7 +291,6 @@ export default {
   .preveiwCar {
     .preveiwCar-wrapper {
       margin-bottom: 45px;
-      padding: 20px;
       .breadcrumbs {
         margin-bottom: 10px;
         a {
@@ -299,33 +302,17 @@ export default {
       }
       .preveiwCar-content {
         .preveiwCar-left {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: flex-start;
-          width: 100%;
-          .images {
-            width: 78%;
-            img {
+          width: 42%;
+          .preveiwCar-video {
+            margin-top: 20px;
+            iframe {
               width: 100%;
-              height: 466px;
-            }
-          }
-          .images-preveiw {
-            width: 20%;
-            margin-top: 0px;
-            .preveiw-img {
-              width: 100%;
-              margin-bottom: 15px;
-              img {
-                width: 100%;
-                height: 105px;
-              }
+              height: 342px;
             }
           }
         }
         .preveiwCar-right {
-          width: 100%;
+          width: 56%;
           h1.title {
             font-size: 36px;
             font-weight: 500;
@@ -434,25 +421,107 @@ export default {
 @media (max-width: 991px) {
   .preveiwCar {
     .preveiwCar-wrapper {
-      .preveiwCar-content {
-        .preveiwCar-left {
-          width: 100%;
-          margin-bottom: 15px;
-          .images {
-            width: 78%;
+      .preveiwCar-slider {
+        .swiper-slide {
+          .images-slider {
             img {
-              width: 100%;
-              height: 365px;
+              height: 480px;
             }
           }
-          .images-preveiw {
-            width: 20%;
-            margin-top: 0px;
-            .preveiw-img {
-              width: 85%;
-              img {
-                width: 100%;
-                height: 80px;
+        }
+        h1.title {
+          bottom: 10%;
+          left: 50%;
+          font-size: 54px;
+        }
+      }
+      .preveiwCar-content {
+        flex-flow: column wrap;
+        .preveiwCar-left {
+          width: 100%;
+          order: 2;
+          .preveiwCar-video {
+            margin-top: 20px;
+            iframe {
+              width: 100%;
+              height: 380px;
+            }
+          }
+        }
+        .preveiwCar-right {
+          width: 100%;
+          order: 1;
+          h1.title {
+            font-size: 36px;
+            font-weight: 500;
+            span {
+              margin-left: 45px;
+              font-size: 14px;
+              &:nth-child(2) {
+                margin-left: 15px;
+              }
+            }
+          }
+          ul.shape {
+            width: 70%;
+            margin-top: 15px;
+            li.item {
+              margin: 5px 0;
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+          p.text {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.4;
+            span {
+              display: block;
+              font-weight: 700;
+            }
+          }
+          span.prices-title {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 700;
+            text-align: left;
+          }
+          .preveiwCar-right__bottom {
+            ul.prices {
+              width: 70%;
+              li.item {
+                width: 20%;
+                span.item-top {
+                  width: 100%;
+                  min-height: 60px;
+                  padding: 5px 0;
+                  background-color: #f5f5f5;
+                }
+                span.item-bottom {
+                  width: 100%;
+                  min-height: 48px;
+                  padding: 5px 0;
+                  color: #fff;
+                  background-color: #002b5a;
+                }
+              }
+            }
+            button.prices-btn {
+              width: 28%;
+              font-size: 12px;
+              font-weight: 700;
+              color: #fff;
+              background-color: #002b5a;
+              border: 1px solid #002b5a;
+              transition: all 0.5s;
+              &:hover {
+                color: #002b5a;
+                background-color: #fff;
               }
             }
           }
@@ -466,6 +535,20 @@ export default {
     .preveiwCar-wrapper {
       margin-bottom: 15px;
       padding: 8px;
+      .preveiwCar-slider {
+        .swiper-slide {
+          .images-slider {
+            img {
+              height: 380px;
+            }
+          }
+        }
+        h1.title {
+          bottom: 10%;
+          left: 50%;
+          font-size: 48px;
+        }
+      }
       .breadcrumbs {
         margin-bottom: 10px;
         padding-top: 5px;
@@ -603,6 +686,20 @@ export default {
     .preveiwCar-wrapper {
       margin-bottom: 15px;
       padding: 8px;
+      .preveiwCar-slider {
+        .swiper-slide {
+          .images-slider {
+            img {
+              height: 280px;
+            }
+          }
+        }
+        h1.title {
+          bottom: 10%;
+          left: 50%;
+          font-size: 38px;
+        }
+      }
       .breadcrumbs {
         margin-bottom: 10px;
         padding-top: 5px;
@@ -719,6 +816,20 @@ export default {
     .preveiwCar-wrapper {
       margin-bottom: 15px;
       padding: 8px;
+      .preveiwCar-slider {
+        .swiper-slide {
+          .images-slider {
+            img {
+              height: 220px;
+            }
+          }
+        }
+        h1.title {
+          bottom: 12%;
+          left: 50%;
+          font-size: 32px;
+        }
+      }
       .breadcrumbs {
         margin-bottom: 10px;
         padding-top: 5px;
@@ -731,23 +842,10 @@ export default {
       }
       .preveiwCar-content {
         .preveiwCar-left {
-          width: 100%;
-          margin-bottom: 15px;
-          .images {
-            width: 100%;
-            img {
+          .preveiwCar-video {
+            iframe {
               width: 100%;
-              height: 220px;
-            }
-          }
-          .images-preveiw {
-            width: 100%;
-            margin-top: 5px;
-            .preveiw-img {
-              width: 23%;
-              img {
-                width: 100%;
-              }
+              height: 260px;
             }
           }
         }

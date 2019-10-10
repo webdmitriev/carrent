@@ -14,6 +14,12 @@
             <h2 class="title">ПРОКАТ АВТОМОБИЛЕЙ В МОСКВЕ</h2>
           </li>
           <li class="item item-phone">
+            <a class="whatsapp social" href="#" target="_blank" rel="noopener noreferrer">
+              <img src="@/assets/img/icons/whatsapp.svg" alt="whatsapp" />
+            </a>
+            <a class="telegram social" href="#" target="_blank" rel="noopener noreferrer">
+              <img src="@/assets/img/icons/telegram.svg" alt="telegram" />
+            </a>
             <nuxt-link class="english" to="/en/">En</nuxt-link>
             <span>
               <img src="@/assets/img/icons/phone-call.svg" alt="phone" />
@@ -138,6 +144,7 @@ $red: #ff6666;
       padding-top: 30px;
       padding-bottom: 70px;
       li.item {
+        position: relative;
         width: 20%;
         &.item-logo {
           a {
@@ -167,6 +174,18 @@ $red: #ff6666;
             text-align: right;
             color: $black;
             border-bottom: 1px dashed red;
+          }
+        }
+        a.social {
+          position: absolute;
+          display: block;
+          width: 30px;
+          border: none;
+          &.whatsapp {
+            left: -100px;
+          }
+          &.telegram {
+            left: -40px;
           }
         }
       }

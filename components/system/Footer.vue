@@ -5,7 +5,7 @@
         <ul class="footer-list">
           <li class="item">
             <span class="logo">
-              <img src="@/assets/img/footer/payless-logo-footer.png" alt="payless" />
+              <img src="@/assets/img/footer/payless-logo-footer-white.png" alt="payless" />
             </span>
             <p class="copyright">{{new Date().getFullYear()}} © | Все права защищены</p>
           </li>
@@ -82,6 +82,13 @@ $blueLigth: #f0f8ff;
       justify-content: space-between;
       width: 100%;
       li.item {
+        span.logo {
+          display: block;
+          width: 300px;
+          img {
+            width: 100%;
+          }
+        }
         p.copyright {
           margin: 10px 0 5px 0;
           font-size: 15px;
